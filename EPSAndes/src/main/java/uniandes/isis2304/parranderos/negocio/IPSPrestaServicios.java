@@ -13,7 +13,7 @@ import java.sql.Timestamp;
  * 
  * @author Germán Bravo
  */
-public class IPSPrestaServicios
+public class IPSPrestaServicios implements VOIpsPrestaServicios
 {
 	/* ****************************************************************
 	 * 			Atributos

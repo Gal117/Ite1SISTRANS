@@ -8,16 +8,16 @@ package uniandes.isis2304.parranderos.negocio;
  *
  * @author Germán Bravo
  */
-public class Medico extends Persona
+public class Medico extends Persona implements VOMedico
 {
 	/* ****************************************************************
 	 * 			Atributos
 	 *****************************************************************/
 
-	private enum tipoMedico{
-		GENERAL,ESPECIALISTA	
-	}
-	private tipoMedico tipoMedico;
+//	private enum tipoMedico{
+//		GENERAL,ESPECIALISTA	
+//	}
+//	private tipoMedico tipoMedico;
 	
 	private Integer numeroRegistroMedico;
 	/* ****************************************************************
@@ -29,7 +29,7 @@ public class Medico extends Persona
 	public Medico() 
 	{
 		super();
-		tipoMedico=null;
+//		tipoMedico=null;
 		numeroRegistroMedico=null;
 	}
 
@@ -43,16 +43,16 @@ public class Medico extends Persona
 	public Medico(String nombre, tipo tipoDoc, String numDoc, int rol,String nRol, tipoMedico tipoM, int numReg) 
 	{
 		super(nombre, tipoDoc, numDoc, rol,nRol);
-		this.tipoMedico=tipoM;
+//		this.tipoMedico=tipoM;
 		this.numeroRegistroMedico=numReg;
 	}
 	
-	public tipoMedico getTipoMedico() {
-		return tipoMedico;
+	public  getTipoMedico() {
+//		return tipoMedico;
 	}
 
 	public void setTipoMedico(tipoMedico tipoMedico) {
-		this.tipoMedico = tipoMedico;
+//		this.tipoMedico = tipoMedico;
 	}
 
 	public Integer getNumeroRegistroMedico() {
@@ -67,9 +67,9 @@ public class Medico extends Persona
 	 * @return Una cadena con la información básica del medico
 	 */
 	@Override
-	public String toString() 
-	{
-		return "Medico [tipo de medico=" + tipoMedico+ ", numero de registro medico=" + numeroRegistroMedico + "]";
-	}
+//	public String toString() 
+//	{
+//		return "Medico [tipo de medico=" + tipoMedico+ ", numero de registro medico=" + numeroRegistroMedico + "]";
+//	}
 
 }

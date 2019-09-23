@@ -46,8 +46,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
-import uniandes.isis2304.parranderos.negocio.Parranderos;
-import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
+import uniandes.isis2304.parranderos.negocio.EPS;
+
+
 
 /**
  * Clase principal de la interfaz
@@ -86,7 +87,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     /**
      * Asociación a la clase principal del negocio.
      */
-    private Parranderos parranderos;
+    private EPS eps;
     
 	/* ****************************************************************
 	 * 			Atributos de interfaz
@@ -126,7 +127,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
         }
         
         tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
-        parranderos = new Parranderos (tableConfig);
+        eps = new EPS (tableConfig);
         
     	String path = guiConfig.get("bannerPath").getAsString();
         panelDatos = new PanelDatos ( );
