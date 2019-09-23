@@ -14,9 +14,6 @@ public class Medico extends Persona implements VOMedico
 	 * 			Atributos
 	 *****************************************************************/
 
-//	private enum tipoMedico{
-//		GENERAL,ESPECIALISTA	
-//	}
 	/**
 	 * Atributo que da el id del medico.
 	 */
@@ -47,9 +44,13 @@ public class Medico extends Persona implements VOMedico
 
 	/**
 	 * Constructor con valores
-	 * @param id - El id del medico
-	 * @param nombre - El nombre de la bebida
-	 * @param tipo - El identificador del tipo de bebida
+	 * @param nombre - nombre del médico.
+	 * @param tipoDoc - tipo de documento del médico.
+	 * @param numDoc - número de documento del médico.
+	 * @param pid - El id del medico.
+	 * @param rol - El id del rol del médico.
+	 * @param tipoM - El tipo de médico.
+	 * @param numReg - número de registro del médico.
 	 * @param gradoAlcohol - El graddo de alcohol de la bebida (Mayor que 0)
 	 */
 	public Medico(String nombre, String tipoDoc, String numDoc, long pid, long rol, String tipoM, int numReg) 

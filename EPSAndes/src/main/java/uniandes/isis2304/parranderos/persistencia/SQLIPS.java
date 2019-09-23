@@ -50,7 +50,7 @@ public class SQLIPS {
 	 */
 	public long adicionarIPS (PersistenceManager pm, long idIPS, String nombre, String tipo, String localizacion) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPS () + "(id, nombre, tipo, localizacion) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPS () + "(id, nombre, tipo, localizacion) values (?, ?, ?, ?)");
         q.setParameters(idIPS, nombre, tipo, localizacion);
         return (long) q.executeUnique();
 	}
@@ -88,7 +88,7 @@ public class SQLIPS {
 	 * @param idIPS - El identificador de la IPS
 	 * @return El objeto IPS que tiene el identificador dado
 	 */
-	public IPS darBarPorId (PersistenceManager pm, long idIPS) 
+	public IPS darIPSPorId (PersistenceManager pm, long idIPS) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaIPS() + " WHERE id = ?");
 		q.setResultClass(IPS.class);

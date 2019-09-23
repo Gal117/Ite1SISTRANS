@@ -3,65 +3,58 @@ package uniandes.isis2304.parranderos.negocio;
 
 public class MedicoOrden implements VOMedicoOrden {
 	
-	private long numeroOrden;
+	private long idOrden;
 	
-	private String tipoDocumentoUsuario;
-
-	private String numeroDocumentoUsuario;
-
+	private long idMedico;
+	
+	private long idUsuario;
+	
 	private long idIPS;
-
-	private long idServicio;
-
-	private String tipoDocumentoMedico;
-
-	private String numeroDocumentoMedico;
 	
+	private long idServicio;
+	
+	private String numOrden;
 	
 	public MedicoOrden() {
-		this.numeroOrden=0;
-		this.tipoDocumentoUsuario=null;
-		this.numeroDocumentoUsuario="";
-		this.idIPS=0;
-		this.idServicio=0;
-		this.tipoDocumentoMedico=null;
-		this.numeroDocumentoMedico="";
+		this.idOrden = 0;
+		this.idMedico = 0;
+		this.idUsuario = 0;
+		this.idIPS = 0;
+		this.idServicio = 0;
+		this.numOrden = "";
 	}
 	
-	public MedicoOrden(long num, String tipoU, String numU, long idI,long idS, String tipoM, String numM) {
-		this.numeroOrden=num;
-		this.tipoDocumentoUsuario=tipoU;
-		this.numeroDocumentoUsuario=numU;
-		this.idIPS=idI;
-		this.idServicio=idS;
-		this.tipoDocumentoMedico=tipoM;
-		this.numeroDocumentoMedico=numM;
+	public MedicoOrden(long pIdOrden, long pIdMedico, long pIdUsuario, long pIdIPS, long pIdServicio, String pNumOrden) {
+		this.idOrden = pIdOrden;
+		this.idMedico = pIdMedico;
+		this.idUsuario = pIdUsuario;
+		this.idIPS = pIdIPS;
+		this.idServicio = pIdServicio;
+		this.numOrden = pNumOrden;
 	}
 
-	public long getNumeroOrden() {
-		return numeroOrden;
+	public long getIdOrden() {
+		return this.idOrden;
 	}
 
-	public void setNumeroOrden(long numeroOrden) {
-		this.numeroOrden = numeroOrden;
+	public void setIdOrden(long pIdOrden) {
+		this.idOrden = pIdOrden;
 	}
-
-	public String getTipoDocumentoUsuario() {
-		return tipoDocumentoUsuario;
+	
+	public long getIdMedico() {
+		return this.idMedico;
 	}
-
-	public void setTipoDocumentoUsuario(String tipoDocumentoUsuario) {
-		this.tipoDocumentoUsuario = tipoDocumentoUsuario;
+	public void setIdMedico(long pIdMedico) {
+		this.idMedico = pIdMedico;
 	}
-
-	public String getNumeroDocumentoUsuario() {
-		return numeroDocumentoUsuario;
+	
+	public long getIdUsuario() {
+		return this.idUsuario;
 	}
-
-	public void setNumeroDocumentoUsuario(String numeroDocumentoUsuario) {
-		this.numeroDocumentoUsuario = numeroDocumentoUsuario;
+	public void setIdUsuario(long pIdUsr) {
+		this.idOrden = pIdUsr;
 	}
-
+	
 	public long getIdIPS() {
 		return idIPS;
 	}
@@ -78,20 +71,12 @@ public class MedicoOrden implements VOMedicoOrden {
 		this.idServicio = idServicio;
 	}
 
-	public String getTipoDocumentoMedico() {
-		return tipoDocumentoMedico;
+	public String getNumeroOrden() {
+		return numOrden;
 	}
-
-	public void setTipoDocumentoMedico(String tipoDocumentoMedico) {
-		this.tipoDocumentoMedico = tipoDocumentoMedico;
-	}
-
-	public String getNumeroDocumentoMedico() {
-		return numeroDocumentoMedico;
-	}
-
-	public void setNumeroDocumentoMedico(String numeroDocumentoMedico) {
-		this.numeroDocumentoMedico = numeroDocumentoMedico;
+	
+	public void setNumeroOrden(String pNumeroOrd) {
+		this.numOrden = pNumeroOrd;
 	}
 	/**
 	 * @return Una cadena con la informaciÃ³n bÃ¡sica del medico
@@ -99,9 +84,8 @@ public class MedicoOrden implements VOMedicoOrden {
 	@Override
 	public String toString() 
 	{
-		return "MedicoOrden [numero de orden=" + numeroOrden+ ", tipo documento usuario=" + tipoDocumentoUsuario +
-				", numero documento usuario=" + numeroDocumentoUsuario+", id IPS=" + idIPS +", id del servicio=" + idServicio+
-				", tipo documento medico=" + tipoDocumentoMedico +	", numero documento usuario=" + numeroDocumentoMedico+"]";
+		return "MedicoOrden [ID de orden: "+ idOrden + " ID de médico " + idMedico + " ID de afiliado " + idUsuario
+				+ " ID de servicio " + idServicio + " número de orden: " + numOrden +"]";
 	}
 	 
 }

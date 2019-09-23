@@ -88,6 +88,20 @@ public class PersistenciaEPS {
 	private SQLReservaServicios sqlReservaServicios;
 
 	/**
+	 * Atributo para acceder a sentencias SQL de la tabla ReservaServicios
+	 */
+	private SQLMedicoOrden sqlMedicoOrden;
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla Usuario
+	 */
+	private SQLUsuario sqlUsuario;
+
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla Medico
+	 */
+	private SQLMedico sqlMedico;
+
+	/**
 	 * Constructor privado con valores por defecto - Patrón SINGLETON
 	 */
 	private PersistenciaEPS ()
@@ -188,7 +202,9 @@ public class PersistenciaEPS {
 		sqlMedicosIPS = new SQLMedicosIPS(this);
 		sqlServicioPrestado = new SQLServicioPrestado(this);
 		sqlReservaServicios = new SQLReservaServicios(this);
-	
+		sqlMedicoOrden = new SQLMedicoOrden(this);
+		sqlUsuario = new SQLUsuario(this);
+		sqlMedico = new SQLMedico(this);
 		sqlUtil = new SQLUtil(this);
 	}
 	/**
@@ -214,7 +230,20 @@ public class PersistenciaEPS {
 	{
 		return tablas.get (2);
 	}
-	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Medico de EPSAndes
+	 */
+	public String darTablaMedico()
+	{
+		return tablas.get (3);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de MedicosOrden de EPSAndes
+	 */
+	public String darTablaMedicoOrden()
+	{
+		return tablas.get (4);
+	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de MedicosIPS de EPSAndes
 	 */
@@ -253,6 +282,14 @@ public class PersistenciaEPS {
 	public String darTablaServicioPrestado()
 	{
 		return tablas.get (9);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Servicios de EPSAndes
+	 */
+	public String darTablaUsuario()
+	{
+		return tablas.get (10);
 	}
 	
 	/**

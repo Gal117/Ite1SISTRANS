@@ -2,6 +2,21 @@ package uniandes.isis2304.parranderos.negocio;
 
 public interface VOMedicoOrden {
 	
+
+	/**
+	 * @return el ID de la orden.
+	 */
+	public long getIdOrden();
+	
+	/**
+	 * @return el ID del médico que emite la orden.
+	 */
+	public long getIdMedico();
+	/**
+	 * @return el ID del afiliado al que se le da la orden.
+	 */
+	public long getIdUsuario();
+	
 	/**
 	 * @return el ID de la IPS donde se remite al paciente con la orden.
 	 */
@@ -15,26 +30,7 @@ public interface VOMedicoOrden {
 	/**
 	 * @return el número de orden.
 	 */
-	public long getNumeroOrden();
+	public String getNumeroOrden();
 	
 	
-	/**
-	 * @return el número de documento del médico que crea la orden.
-	 */
-	public String getNumeroDocumentoMedico();
-	
-	/**
-	 * @return el número de documento del usuario al que se le da la orden.
-	 */
-	public String getNumeroDocumentoUsuario();
-
-	/**
-	 * @return el tipo de documento del médico que crea la orden.
-	 */
-	public String getTipoDocumentoMedico();
-	
-	/**
-	 * @return el tipo de documento del usuario al que se le da la orden.
-	 */
-	public String getTipoDocumentoUsuario();
 }

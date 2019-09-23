@@ -2,13 +2,18 @@ package uniandes.isis2304.parranderos.negocio;
 
 public interface VOMedico {
 	
-//	public enum tipoMedico{
-//		GENERAL,ESPECIALISTA	
-//	}
+
 	/**
 	 * @return El número de registro del médico
 	 */
 	public Integer getNumeroRegistroMedico();
+	/**
+	 * @return El tipo de médico
+	 */
 	public String getTipoMedico();
-//	public tipoMedico getTipoMedico();
+	/**
+	 * @return El id de médico
+	 */
+	public long getId();
+
 }

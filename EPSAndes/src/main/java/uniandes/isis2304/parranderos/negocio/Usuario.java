@@ -46,8 +46,12 @@ public class Usuario extends Persona
 
 	/**
 	 * Constructor con valores
-	 * @param idBebedor - El identificador del bebedor. Debe exixtir un bebedor con dicho identificador
-	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
+	 * @param nombre - nombre del usuario.
+	 * @param tipoDoc - tipo de documento del usuario.
+	 * @param numDoc - número de documento del usuario.
+	 * @param rol - rol del usuario en EPSAndes
+	 * @param email - correo electrónico del usuario.
+	 * @param fecha - fecha de nacimiento del usuario.
 	 */
 	public Usuario(String nombre, String tipoDoc, String numDoc, long rol, String email, Timestamp fecha) 
 	{
@@ -85,7 +89,8 @@ public class Usuario extends Persona
 	@Override
 	public String toString() 
 	{
-		return "Usuario [email=" + email + ", fecha de nacimiento=" + fechaNacimiento + "]";
+		return "Usuario [ Nombre "+ getNombre() + " tipo de documento: " + getTipoDocumento() + " número de documento " + getNumeroDocumento()
+		+ " rol de usuario " +"email: " + email + ", fecha de nacimiento: " + fechaNacimiento + "]";
 	}
 	
 }
