@@ -8,18 +8,12 @@ public interface VOServicioPrestado {
 	public long getIdReserva();
 	
 	/**
-	 * @return tipo de documento del recepcionista que registra llegada del usuario
+	 * @return id del recepcionista que registra la prestación del servicio.
 	 */
-	public String getTipoDocumentoUsuario();
-
-	/**
-	 * @return número de documento del recepcionista que registra llegada del usuario
-	 */
-	public String getNumeroDocumentoUsuario();
-
+	public long getIdRecepcionista();
 	/**
 	 * @return true si el afiliado asistió a su cita, false de lo contrario.
 	 */
-	public boolean isCumplido();
+	public String getCumplido();
 
 }

@@ -4,17 +4,12 @@ public interface VOMedicosIPS {
 
 
 	/**
-	 * @return el id del médico.
+	 * @return el ID de la IPS.
 	 */
 	public long getIdIPS();
 	
 	/**
-	 * @return el número de documento del médico que crea la orden.
+	 * @return el ID del médico.
 	 */
-	public String getNumeroDocumentoMedico();
-	
-	/**
-	 * @return el número de documento del usuario al que se le da la orden.
-	 */
-	public String getTipoDocumentoMedico();
+	public long getIdMedico();
 }

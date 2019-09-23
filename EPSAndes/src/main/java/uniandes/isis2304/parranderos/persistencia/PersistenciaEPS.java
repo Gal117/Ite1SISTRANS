@@ -77,7 +77,15 @@ public class PersistenciaEPS {
 	 */
 	private SQLMedicosIPS sqlMedicosIPS;
 
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla MedicosIPS
+	 */
+	private SQLServicioPrestado sqlServicioPrestado;
 
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla ReservaServicios
+	 */
+	private SQLReservaServicios sqlReservaServicios;
 
 	/**
 	 * Constructor privado con valores por defecto - Patrón SINGLETON
@@ -93,11 +101,11 @@ public class PersistenciaEPS {
 		tablas.add ("IPS");
 		tablas.add ("IPSPRESTASERVICIOS");
 		tablas.add ("MEDICO");
-		tablas.add ("MEDICOSORDENES");
+		tablas.add ("MEDICOORDEN");
 		tablas.add ("MEDICOSIPS");
 		tablas.add ("RESERVASERVICIOS");
 		tablas.add ("ROLES");
-		tablas.add ("SERVICIOS");
+		tablas.add ("SERVICIO");
 		tablas.add ("SERVICIOPRESTADO");
 		tablas.add ("USUARIO");
 	}
@@ -174,16 +182,13 @@ public class PersistenciaEPS {
 	private void crearClasesSQL ()
 	{
 		sqlRoles = new SQLRoles(this);
-		sqlRoles = new SQLRoles(this);
 		sqlServicio = new SQLServicio(this);
 		sqlIps =new SQLIPS(this);
 		sqlIpsPrestaServicios = new SQLIPSPrestaServicios(this);
 		sqlMedicosIPS = new SQLMedicosIPS(this);
-//		sqlBar = new SQLBar(this);
-//		sqlBebedor = new SQLBebedor(this);
-//		sqlGustan = new SQLGustan(this);
-//		sqlSirven = new SQLSirven (this);
-//		sqlVisitan = new SQLVisitan(this);		
+		sqlServicioPrestado = new SQLServicioPrestado(this);
+		sqlReservaServicios = new SQLReservaServicios(this);
+	
 		sqlUtil = new SQLUtil(this);
 	}
 	/**
@@ -217,6 +222,13 @@ public class PersistenciaEPS {
 	{
 		return tablas.get (5);
 	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de MedicosIPS de EPSAndes
+	 */
+	public String darTablaReservaServicios()
+	{
+		return tablas.get (6);
+	}
 	
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Roles de EPSAndes
@@ -233,6 +245,14 @@ public class PersistenciaEPS {
 	public String darTablaServicio()
 	{
 		return tablas.get (8);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Servicios de EPSAndes
+	 */
+	public String darTablaServicioPrestado()
+	{
+		return tablas.get (9);
 	}
 	
 	/**

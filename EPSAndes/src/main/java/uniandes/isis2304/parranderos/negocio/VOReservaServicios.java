@@ -20,24 +20,14 @@ public interface VOReservaServicios {
 	public long getIdServicio();
 	
 	/**
-	 * @return el número de documento del médico que crea la orden.
+	 * @return el ID del médico que presta el servicio.
 	 */
-	public String getNumeroDocumentoMedico();
+	public long getIdMedico();
 	
 	/**
-	 * @return el número de documento del usuario al que se le da la orden.
+	 * @return el ID del afiliado que necesita el servicio.
 	 */
-	public String getNumeroDocumentoUsuario();
-
-	/**
-	 * @return el tipo de documento del médico que crea la orden.
-	 */
-	public String getTipoDocumentoMedico();
-	
-	/**
-	 * @return el tipo de documento del usuario al que se le da la orden.
-	 */
-	public String getTipoDocumentoUsuario();
+	public long getIdAfiliado();
 	
 	/**
 	 * @return la fecha y hora prestada de la reserva.

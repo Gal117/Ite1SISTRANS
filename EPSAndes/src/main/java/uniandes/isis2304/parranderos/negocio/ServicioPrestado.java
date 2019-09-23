@@ -3,38 +3,44 @@ package uniandes.isis2304.parranderos.negocio;
 
 public class ServicioPrestado implements VOServicioPrestado {
 	
-	private String tipoDocumentoUsuario;
+	/**
+	 * Atributo que da el id del recepcionista que registra si se prestÛ el servicio
+	 */
+	private long idRecepcionista;
 	
-	private String numeroDocumentoUsuario;
-	
+	/**
+	 * Atributo que da el id de reserva de servicio
+	 */
 	private long idReserva;
 	
-	private boolean cumplido;
+	/**
+	 * Atributo que da si un afiliado tomÛ el servicio reservado
+	 */
+	private String cumplido;
 	
 	public ServicioPrestado() {
-		this.tipoDocumentoUsuario = "";
-		this.numeroDocumentoUsuario = "";
+		this.idRecepcionista = 0;
 		this.idReserva = 0;
-		this.cumplido = false;
+		this.cumplido = "";
 	}
-	public ServicioPrestado(String tipo,String num, long idR,boolean c)
+	/**
+	 * Constructor de ServicioPrestado 
+	 * @param idRecep - id del recepcionista que registra la prestaciÛn de servicio
+	 * @param idReser - id de la reserva de servicio
+	 * @param c - dice si el afiliado fue o no a la cita reservada (Y,N). Y si fue, N si no
+	 */
+	public ServicioPrestado(long idRecep, long idReser,String c)
 	{
-		this.tipoDocumentoUsuario = tipo;
-		this.numeroDocumentoUsuario = num;
-		this.idReserva = idR;
+		this.idRecepcionista = idRecep;
+		this.idReserva = idReser;
 		this.cumplido = c;
 	}
-	public String getNumeroDocumentoUsuario() {
-		return numeroDocumentoUsuario;
+	public long getIdRecepcionista() {
+		return this.idRecepcionista;
 	}
-	public void setNumeroDocumentoUsuario(String numeroDocumentoUsuario) {
-		this.numeroDocumentoUsuario = numeroDocumentoUsuario;
-	}
-	public String getTipoDocumentoUsuario() {
-		return tipoDocumentoUsuario;
-	}
-	public void setTipoDocumentoUsuario(String tipoDocumentoUsuario) {
-		this.tipoDocumentoUsuario = tipoDocumentoUsuario;
+	
+	public void setIdRecepcionista(long pIdRecep) {
+		this.idRecepcionista = pIdRecep;
 	}
 	public long getIdReserva() {
 		return idReserva;
@@ -42,20 +48,20 @@ public class ServicioPrestado implements VOServicioPrestado {
 	public void setIdReserva(long idReserva) {
 		this.idReserva = idReserva;
 	}
-	public boolean isCumplido() {
+	public String getCumplido() {
 		return cumplido;
 	}
-	public void setCumplido(boolean cumplido) {
+	public void setCumplido(String cumplido) {
 		this.cumplido = cumplido;
 	}
 	/**
-	 * @return Una cadena con la informaci√≥n b√°sica del medico
+	 * @return Una cadena con la informaci√≥n b√°sica del ServicioPrestado
 	 */
 	@Override
 	public String toString() 
 	{
-		return "ServicioPrestado [tipo de documento dle usuario=" + tipoDocumentoUsuario+ ", numero de documento del usuario=" + numeroDocumentoUsuario +
-				", id de reserva =" + idReserva + ", se completo la cita =" + cumplido+"]";
+		return "ServicioPrestado ["+ "ID del recepcionista que registra"+ idRecepcionista +
+				", ID de reserva =" + idReserva + ", se completo la cita =" + cumplido+"]";
 	}
 	
 }

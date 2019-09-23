@@ -19,14 +19,12 @@ public class MedicosIPS implements VOMedicosIPS
 	 * 			Atributos
 	 *****************************************************************/
 	/**
-	 * El identificador del bar que sirve la bebida
+	 * El identificador del medico
 	 */
-	private String numeroDocumentoMedico;
-	
-	private String tipoDocumentoMedico;
+	private long idMedico;
 	
 	/**
-	 * El identificador de la bebida que es servida en el bar
+	 * El identificador de la IPS donde el medico presta servicio.
 	 */
 	private long idIPS;
 
@@ -38,41 +36,30 @@ public class MedicosIPS implements VOMedicosIPS
 	 */
 	public MedicosIPS () 
 	{
-		this.numeroDocumentoMedico = "";
+		this.idMedico = 0;
 		this.idIPS = 0;
-		this.tipoDocumentoMedico = "";
+	
 	}
 
 	/**
 	 * Constructor con valores
-	 * @param idBar - El identificador del bar. Debe exixtir un bar con dicho identificador
-	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
-	 * @param horario - El horario en el que el bar sirve la bebida (DIURNO, NOCTURNO, TODOS)
+	 * @param pIdMedico - El identificador del medico. Debe exixtir un medico con dicho identificador
+	 * @param idBebida - El identificador de la IPS. Debe existir una IPS con dicho identificador
 	 */
-	public MedicosIPS (String numDocMed, String tipoDoc, long idIPS) 
+	public MedicosIPS (long pIdMedico, long pIdIPS) 
 	{
-		this.idIPS = idIPS;
-		this.numeroDocumentoMedico = numDocMed;
-		this.tipoDocumentoMedico = tipoDoc;
+		this.idIPS = pIdIPS;
+		this.idMedico = pIdMedico;
 	}
 
 
-	public String getNumeroDocumentoMedico() {
-		return numeroDocumentoMedico;
+	public long getIdMedico() {
+		return idMedico;
 	}
-
-	public void setNumeroDocumentoMedico(String numeroDocumentoMedico) {
-		this.numeroDocumentoMedico = numeroDocumentoMedico;
+	
+	public void setIdMedico(long pIdMedico) {
+		this.idMedico = pIdMedico;
 	}
-
-	public String getTipoDocumentoMedico() {
-		return tipoDocumentoMedico;
-	}
-
-	public void setTipoDocumentoMedico(String tipoDocumentoMedico) {
-		this.tipoDocumentoMedico = tipoDocumentoMedico;
-	}
-
 	public long getIdIPS() {
 		return idIPS;
 	}
@@ -87,6 +74,6 @@ public class MedicosIPS implements VOMedicosIPS
 	@Override
 	public String toString() 
 	{
-		return "MedicosIPS [idIPS=" + idIPS + ", tipo de documneto medico=" + tipoDocumentoMedico + ", numero de documento del medico=" + numeroDocumentoMedico + "]";
+		return "MedicosIPS: " + "ID del médico " + idMedico + " ID de IPS donde sirve el médico=" + idIPS;
 	}
 }
