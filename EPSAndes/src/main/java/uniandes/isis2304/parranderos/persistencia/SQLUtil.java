@@ -1,17 +1,4 @@
-/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad	de	los	Andes	(Bogotá	- Colombia)
- * Departamento	de	Ingeniería	de	Sistemas	y	Computación
- * Licenciado	bajo	el	esquema	Academic Free License versión 2.1
- * 		
- * Curso: isis2304 - Sistemas Transaccionales
- * Proyecto: Parranderos Uniandes
- * @version 1.0
- * @author Germán Bravo
- * Julio de 2018
- * 
- * Revisado por: Claudia Jiménez, Christian Ariza
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
+
 
 package uniandes.isis2304.parranderos.persistencia;
 
@@ -41,7 +28,7 @@ class SQLUtil
 	/**
 	 * El manejador de persistencia general de la aplicación
 	 */
-	private PersistenciaParranderos pp;
+	private PersistenciaEPS pp;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -49,11 +36,11 @@ class SQLUtil
 
 	/**
 	 * Constructor
-	 * @param pp - El Manejador de persistencia de la aplicación
+	 * @param persistenciaEPS - El Manejador de persistencia de la aplicación
 	 */
-	public SQLUtil (PersistenciaParranderos pp)
+	public SQLUtil (PersistenciaEPS persistenciaEPS)
 	{
-		this.pp = pp;
+		this.pp = persistenciaEPS;
 	}
 	
 	/**
