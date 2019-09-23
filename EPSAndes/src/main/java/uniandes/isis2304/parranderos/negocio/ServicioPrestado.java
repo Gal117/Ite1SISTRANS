@@ -1,10 +1,9 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import uniandes.isis2304.parranderos.negocio.Persona.tipo;
 
-public class ServicioPrestado {
+public class ServicioPrestado implements VOServicioPrestado {
 	
-	private tipo tipoDocumentoUsuario;
+	private String tipoDocumentoUsuario;
 	
 	private String numeroDocumentoUsuario;
 	
@@ -13,12 +12,12 @@ public class ServicioPrestado {
 	private boolean cumplido;
 	
 	public ServicioPrestado() {
-		this.tipoDocumentoUsuario = null;
+		this.tipoDocumentoUsuario = "";
 		this.numeroDocumentoUsuario = "";
 		this.idReserva = 0;
 		this.cumplido = false;
 	}
-	public ServicioPrestado(tipo tipo,String num, long idR,boolean c)
+	public ServicioPrestado(String tipo,String num, long idR,boolean c)
 	{
 		this.tipoDocumentoUsuario = tipo;
 		this.numeroDocumentoUsuario = num;
@@ -31,10 +30,10 @@ public class ServicioPrestado {
 	public void setNumeroDocumentoUsuario(String numeroDocumentoUsuario) {
 		this.numeroDocumentoUsuario = numeroDocumentoUsuario;
 	}
-	public tipo getTipoDocumentoUsuario() {
+	public String getTipoDocumentoUsuario() {
 		return tipoDocumentoUsuario;
 	}
-	public void setTipoDocumentoUsuario(tipo tipoDocumentoUsuario) {
+	public void setTipoDocumentoUsuario(String tipoDocumentoUsuario) {
 		this.tipoDocumentoUsuario = tipoDocumentoUsuario;
 	}
 	public long getIdReserva() {

@@ -7,20 +7,11 @@ package uniandes.isis2304.parranderos.negocio;
  *
  * @author Daniel Betancurth Dorado
  */
-public abstract class  Persona 
+public abstract class  Persona implements VOPersona
 {
 	/* ****************************************************************
 	 * 			Atributos
 	 *****************************************************************/
-	
-	/**
-	 * El tipo de documento de la persona
-	 */
-	public enum tipo{
-		TARJETA_DE_IDENTIDAD,
-		CEDULA
-	}
-	
 	
 	/**
 	 * El numero de documento de la persona
@@ -32,11 +23,11 @@ public abstract class  Persona
 	 */
 	private String nombre;
 
-	private tipo tipoDocumento;
+	private String tipoDocumento;
 	
-	private Integer idRol;
+	private long idRol;
 	
-	private String nombreRol;
+
 	
 	/* ****************************************************************
 	 * 			Métodos
@@ -47,10 +38,10 @@ public abstract class  Persona
 	public Persona() 
 	{
 		this.nombre = "";
-		this.tipoDocumento = null;
+		this.tipoDocumento = "";
 		this.numeroDocumento = "";
-		this.idRol=null;
-		this.nombreRol="";
+		this.idRol=0;
+		
 	}
 
 	/**
@@ -60,25 +51,18 @@ public abstract class  Persona
 	 * @param ciudad - La ciudad del bebedor
 	 * @param presupuesto - El presupuesto del bebedor (ALTO, MEDIO, BAJO)
 	 */
-	public Persona(String nombre, tipo tipoDoc, String numDoc, int rol, String nRol) 
+	public Persona(String nombre, String tipoDoc, String numDoc, int rol) 
 	{
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDoc;
 		this.numeroDocumento = numDoc;
 		this.idRol=rol;
-		this.nombreRol=nRol;
-
-	}
-
-	public String getNombreRol() {
-		return nombreRol;
-	}
-
-	public void setNombreRol(String nombreRol) {
-		this.nombreRol = nombreRol;
-	}
 	
-	public int getIdRol() {
+
+	}
+
+	
+	public long getIdRol() {
 		return idRol;
 	}
 	public void setIdRol(Integer idRol) {
@@ -104,7 +88,7 @@ public abstract class  Persona
 	/**
 	 * @return La ciudad del bebedor
 	 */
-	public tipo getTipoDocumento() 
+	public String getTipoDocumento() 
 	{
 		return tipoDocumento;
 	}
@@ -112,7 +96,7 @@ public abstract class  Persona
 	/**
 	 * @param ciudad - La nueva ciudad del bebedor
 	 */
-	public void setTipoDocumento(tipo tipoDocumento) 
+	public void setTipoDocumento(String tipoDocumento) 
 	{
 		this.tipoDocumento = tipoDocumento;
 	}

@@ -17,7 +17,7 @@ public class Medico extends Persona implements VOMedico
 //	private enum tipoMedico{
 //		GENERAL,ESPECIALISTA	
 //	}
-//	private tipoMedico tipoMedico;
+	private String tipoMedico;
 	
 	private Integer numeroRegistroMedico;
 	/* ****************************************************************
@@ -29,7 +29,7 @@ public class Medico extends Persona implements VOMedico
 	public Medico() 
 	{
 		super();
-//		tipoMedico=null;
+		tipoMedico= "";
 		numeroRegistroMedico=null;
 	}
 
@@ -40,19 +40,19 @@ public class Medico extends Persona implements VOMedico
 	 * @param tipo - El identificador del tipo de bebida
 	 * @param gradoAlcohol - El graddo de alcohol de la bebida (Mayor que 0)
 	 */
-	public Medico(String nombre, tipo tipoDoc, String numDoc, int rol,String nRol, tipoMedico tipoM, int numReg) 
+	public Medico(String nombre, String tipoDoc, String numDoc, int rol, String tipoM, int numReg) 
 	{
-		super(nombre, tipoDoc, numDoc, rol,nRol);
-//		this.tipoMedico=tipoM;
+		super(nombre, tipoDoc, numDoc, rol);
+		this.tipoMedico=tipoM;
 		this.numeroRegistroMedico=numReg;
 	}
 	
-	public  getTipoMedico() {
-//		return tipoMedico;
+	public String  getTipoMedico() {
+		return tipoMedico;
 	}
 
-	public void setTipoMedico(tipoMedico tipoMedico) {
-//		this.tipoMedico = tipoMedico;
+	public void setTipoMedico(String tipoMedico) {
+		this.tipoMedico = tipoMedico;
 	}
 
 	public Integer getNumeroRegistroMedico() {
@@ -67,9 +67,9 @@ public class Medico extends Persona implements VOMedico
 	 * @return Una cadena con la información básica del medico
 	 */
 	@Override
-//	public String toString() 
-//	{
-//		return "Medico [tipo de medico=" + tipoMedico+ ", numero de registro medico=" + numeroRegistroMedico + "]";
-//	}
+	public String toString() 
+	{
+		return "Medico [tipo de medico=" + tipoMedico+ ", numero de registro medico=" + numeroRegistroMedico + "]";
+	}
 
 }

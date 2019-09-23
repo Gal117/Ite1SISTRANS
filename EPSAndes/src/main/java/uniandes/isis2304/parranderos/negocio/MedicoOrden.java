@@ -1,12 +1,11 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import uniandes.isis2304.parranderos.negocio.Persona.tipo;
 
-public class MedicoOrden {
+public class MedicoOrden implements VOMedicoOrden {
 	
 	private long numeroOrden;
 	
-	private tipo tipoDocumentoUsuario;
+	private String tipoDocumentoUsuario;
 
 	private String numeroDocumentoUsuario;
 
@@ -14,7 +13,7 @@ public class MedicoOrden {
 
 	private long idServicio;
 
-	private tipo tipoDocumentoMedico;
+	private String tipoDocumentoMedico;
 
 	private String numeroDocumentoMedico;
 	
@@ -29,7 +28,7 @@ public class MedicoOrden {
 		this.numeroDocumentoMedico="";
 	}
 	
-	public MedicoOrden(long num, tipo tipoU, String numU, long idI,long idS, tipo tipoM, String numM) {
+	public MedicoOrden(long num, String tipoU, String numU, long idI,long idS, String tipoM, String numM) {
 		this.numeroOrden=num;
 		this.tipoDocumentoUsuario=tipoU;
 		this.numeroDocumentoUsuario=numU;
@@ -47,11 +46,11 @@ public class MedicoOrden {
 		this.numeroOrden = numeroOrden;
 	}
 
-	public tipo getTipoDocumentoUsuario() {
+	public String getTipoDocumentoUsuario() {
 		return tipoDocumentoUsuario;
 	}
 
-	public void setTipoDocumentoUsuario(tipo tipoDocumentoUsuario) {
+	public void setTipoDocumentoUsuario(String tipoDocumentoUsuario) {
 		this.tipoDocumentoUsuario = tipoDocumentoUsuario;
 	}
 
@@ -79,11 +78,11 @@ public class MedicoOrden {
 		this.idServicio = idServicio;
 	}
 
-	public tipo getTipoDocumentoMedico() {
+	public String getTipoDocumentoMedico() {
 		return tipoDocumentoMedico;
 	}
 
-	public void setTipoDocumentoMedico(tipo tipoDocumentoMedico) {
+	public void setTipoDocumentoMedico(String tipoDocumentoMedico) {
 		this.tipoDocumentoMedico = tipoDocumentoMedico;
 	}
 

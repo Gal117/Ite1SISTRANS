@@ -6,7 +6,7 @@ package uniandes.isis2304.parranderos.negocio;
  *
  * @author Germán Bravo
  */
-public class Servicio{
+public class Servicio implements VOServicio{
 	/* ****************************************************************
 	 * 			Atributos
 	 *****************************************************************/

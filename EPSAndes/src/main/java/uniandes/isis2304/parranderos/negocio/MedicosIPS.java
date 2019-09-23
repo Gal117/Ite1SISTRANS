@@ -2,7 +2,6 @@
 
 package uniandes.isis2304.parranderos.negocio;
 
-import uniandes.isis2304.parranderos.negocio.Persona.tipo;
 
 /**
  * Clase para modelar la relación SIRVEN del negocio de los Parranderos:
@@ -14,7 +13,7 @@ import uniandes.isis2304.parranderos.negocio.Persona.tipo;
  * 
  * @author Germán Bravo
  */
-public class MedicosIPS
+public class MedicosIPS implements VOMedicosIPS
 {
 	/* ****************************************************************
 	 * 			Atributos
@@ -24,7 +23,7 @@ public class MedicosIPS
 	 */
 	private String numeroDocumentoMedico;
 	
-	private tipo tipoDocumentoMedico;
+	private String tipoDocumentoMedico;
 	
 	/**
 	 * El identificador de la bebida que es servida en el bar
@@ -41,7 +40,7 @@ public class MedicosIPS
 	{
 		this.numeroDocumentoMedico = "";
 		this.idIPS = 0;
-		this.tipoDocumentoMedico = null;
+		this.tipoDocumentoMedico = "";
 	}
 
 	/**
@@ -50,7 +49,7 @@ public class MedicosIPS
 	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
 	 * @param horario - El horario en el que el bar sirve la bebida (DIURNO, NOCTURNO, TODOS)
 	 */
-	public MedicosIPS (String numDocMed, tipo tipoDoc, long idIPS) 
+	public MedicosIPS (String numDocMed, String tipoDoc, long idIPS) 
 	{
 		this.idIPS = idIPS;
 		this.numeroDocumentoMedico = numDocMed;
@@ -66,11 +65,11 @@ public class MedicosIPS
 		this.numeroDocumentoMedico = numeroDocumentoMedico;
 	}
 
-	public tipo getTipoDocumentoMedico() {
+	public String getTipoDocumentoMedico() {
 		return tipoDocumentoMedico;
 	}
 
-	public void setTipoDocumentoMedico(tipo tipoDocumentoMedico) {
+	public void setTipoDocumentoMedico(String tipoDocumentoMedico) {
 		this.tipoDocumentoMedico = tipoDocumentoMedico;
 	}
 

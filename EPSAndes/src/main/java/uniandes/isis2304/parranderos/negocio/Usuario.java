@@ -1,7 +1,7 @@
 
 package uniandes.isis2304.parranderos.negocio;
 
-import com.sun.jmx.snmp.Timestamp;
+import java.sql.Timestamp;
 
 /**
  * Clase para modelar la relación GUSTAN del negocio de los Parranderos:
@@ -45,9 +45,9 @@ public class Usuario extends Persona
 	 * @param idBebedor - El identificador del bebedor. Debe exixtir un bebedor con dicho identificador
 	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
 	 */
-	public Usuario(String nombre, tipo tipoDoc, String numDoc, int rol,String nRol, String email, Timestamp fecha) 
+	public Usuario(String nombre, String tipoDoc, String numDoc, int rol, String email, Timestamp fecha) 
 	{
-		super(nombre, tipoDoc, numDoc, rol,nRol);
+		super(nombre, tipoDoc, numDoc, rol);
 		this.email=email;
 		this.fechaNacimiento=fecha;
 	}

@@ -1,14 +1,12 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import com.sun.jmx.snmp.Timestamp;
+import java.sql.Timestamp;
 
-import uniandes.isis2304.parranderos.negocio.Persona.tipo;
-
-public class ReservaServicios {
+public class ReservaServicios implements VOReservaServicios {
 
 	private long idReserva;
 
-	private tipo tipoDocumentoUsuario;
+	private String tipoDocumentoUsuario;
 
 	private String numeroDocumentoUsuario;
 
@@ -16,7 +14,7 @@ public class ReservaServicios {
 
 	private long idServicio;
 
-	private tipo tipoDocumentoMedico;
+	private String tipoDocumentoMedico;
 
 	private String numeroDocumentoMedico;
 
@@ -33,7 +31,7 @@ public class ReservaServicios {
 		this.numeroDocumentoMedico = "";
 		this.fechayHora = new Timestamp(0);
 	}
-	public ReservaServicios(long idR, tipo tipoU, String numU,long idI,long idS, tipo tipoM,String numM, Timestamp f ) 
+	public ReservaServicios(long idR, String tipoU, String numU,long idI,long idS, String tipoM,String numM, Timestamp f ) 
 	{
 		this.idReserva=idR;
 		this.tipoDocumentoUsuario=tipoU;
@@ -50,10 +48,10 @@ public class ReservaServicios {
 	public void setIdReserva(long idReserva) {
 		this.idReserva = idReserva;
 	}
-	public tipo getTipoDocumentoUsuario() {
+	public String getTipoDocumentoUsuario() {
 		return tipoDocumentoUsuario;
 	}
-	public void setTipoDocumentoUsuario(tipo tipoDocumentoUsuario) {
+	public void setTipoDocumentoUsuario(String tipoDocumentoUsuario) {
 		this.tipoDocumentoUsuario = tipoDocumentoUsuario;
 	}
 	public String getNumeroDocumentoUsuario() {
@@ -74,10 +72,10 @@ public class ReservaServicios {
 	public void setIdServicio(long idServicio) {
 		this.idServicio = idServicio;
 	}
-	public tipo getTipoDocumentoMedico() {
+	public String getTipoDocumentoMedico() {
 		return tipoDocumentoMedico;
 	}
-	public void setTipoDocumentoMedico(tipo tipoDocumentoMedico) {
+	public void setTipoDocumentoMedico(String tipoDocumentoMedico) {
 		this.tipoDocumentoMedico = tipoDocumentoMedico;
 	}
 	public String getNumeroDocumentoMedico() {
