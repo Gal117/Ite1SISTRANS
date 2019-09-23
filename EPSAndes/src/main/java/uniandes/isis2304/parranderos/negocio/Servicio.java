@@ -20,8 +20,7 @@ package uniandes.isis2304.parranderos.negocio;
  *
  * @author Germán Bravo
  */
-public class TipoBebida implements VOTipoBebida
-{
+public class Servicio{
 	/* ****************************************************************
 	 * 			Atributos
 	 *****************************************************************/
@@ -41,10 +40,10 @@ public class TipoBebida implements VOTipoBebida
 	/**
 	 * Constructor por defecto
 	 */
-	public TipoBebida() 
+	public Servicio() 
 	{
 		this.id = 0;
-		this.nombre = "Default";
+		this.nombre = "";
 	}
 
 	/**
@@ -52,7 +51,7 @@ public class TipoBebida implements VOTipoBebida
 	 * @param id - El identificador del tipo de bebida
 	 * @param nombre - El nombre del tipo de bebida
 	 */
-	public TipoBebida(long id, String nombre) 
+	public Servicio(long id, String nombre) 
 	{
 		this.id = id;
 		this.nombre = nombre;
@@ -97,17 +96,6 @@ public class TipoBebida implements VOTipoBebida
 	@Override
 	public String toString() 
 	{
-		return "TipoBebida [id=" + id + ", nombre=" + nombre + "]";
+		return "Servicio [id=" + id + ", nombre=" + nombre + "]";
 	}
-
-	/**
-	 * @param tipo - El TipoBebida a comparar
-	 * @return True si tienen el mismo nombre
-	 */
-	public boolean equals(Object tipo) 
-	{
-		TipoBebida tb = (TipoBebida) tipo;
-		return id == tb.id && nombre.equalsIgnoreCase (tb.nombre);
-	}
-
 }

@@ -20,7 +20,7 @@ package uniandes.isis2304.parranderos.negocio;
  *
  * @author Germán Bravo
  */
-public class Bar implements VOBar
+public class IPS 
 {
 	/* ****************************************************************
 	 * 			Atributos
@@ -29,40 +29,41 @@ public class Bar implements VOBar
 	 * El identificador ÚNICO de los bares
 	 */
 	private long id;
-	
+
 	/**
 	 * El nombre del bar
 	 */
 	private String nombre;
 
 	/**
-	 * La ciudad donde se encuentra el bar
+	 * La localizacion donde se encuentra la IPS
 	 */
-	private String ciudad;
-	
+	private String localizacion;
+
 	/**
-	 * El presupuesto del bar (ALTO, MEDIO, BAJO)
+	 * El tipo de la IPS
 	 */
-	private String presupuesto;
-	
-	/**
-	 * El número de sedes del bar en la ciudad
-	 */
-	private int cantSedes;
+	private enum tipo{
+		HOSPITAL, 
+		CENTRO_DE_DIAGNOSTICO,
+		LABORATORIO,
+		CENTRO_MEDICO
+	}
+	private tipo tipoIPS;
+
 
 	/* ****************************************************************
 	 * 			Métodos 
 	 *****************************************************************/
-    /**
-     * Constructor por defecto
-     */
-	public Bar() 
-    {
-    	this.id = 0;
+	/**
+	 * Constructor por defecto
+	 */
+	public IPS() 
+	{
+		this.id = 0;
 		this.nombre = "";
-		this.ciudad = "";
-		this.presupuesto = "";
-		this.cantSedes = 0;
+		this.localizacion = "";
+		this.tipoIPS=null;
 	}
 
 	/**
@@ -73,23 +74,22 @@ public class Bar implements VOBar
 	 * @param presupuesto - El presupuesto del bar (ALTO, MEDIO, BAJO)
 	 * @param cantSedes - Las sedes del bar (Mayor que 0)
 	 */
-    public Bar(long id, String nombre, String ciudad, String presupuesto, int cantSedes) 
-    {
-    	this.id = id;
+	public IPS(long id, String nombre, String localizacion, tipo tipo) 
+	{
+		this.id = id;
 		this.nombre = nombre;
-		this.ciudad = ciudad;
-		this.presupuesto = presupuesto;
-		this.cantSedes = cantSedes;
+		this.localizacion = localizacion;
+		tipoIPS = tipo;
 	}
 
-    /**
+	/**
 	 * @return El id del bar
 	 */
 	public long getId() 
 	{
 		return id;
 	}
-	
+
 	/**
 	 * @param id - El nuevo id del bar
 	 */
@@ -97,7 +97,7 @@ public class Bar implements VOBar
 	{
 		this.id = id;
 	}
-	
+
 	/**
 	 * @return el nombre del bar
 	 */
@@ -105,7 +105,7 @@ public class Bar implements VOBar
 	{
 		return nombre;
 	}
-	
+
 	/**
 	 * @param nombre El nuevo nombre del bar
 	 */
@@ -113,64 +113,46 @@ public class Bar implements VOBar
 	{
 		this.nombre = nombre;
 	}
-	
+
 	/**
 	 * @return la ciudad del bar
 	 */
-	public String getCiudad() 
+	public String getLocalizacion() 
 	{
-		return ciudad;
+		return localizacion;
 	}
-	
+
 	/**
 	 * @param ciudad - La nueva ciudad del bar
 	 */
-	public void setCiudad(String ciudad) 
+	public void setLocalizacion (String localizacion) 
 	{
-		this.ciudad = ciudad;
+		this.localizacion = localizacion;
 	}
-	
 	/**
-	 * @return El presupuesto del bar
+	 * @return la ciudad del bar
 	 */
-	public String getPresupuesto() 
+	public tipo getTipoIPS() 
 	{
-		return presupuesto;
+		return tipoIPS;
 	}
-	
+
 	/**
-	 * @param presupuesto - El nuevo presupuesto del bar (ALTO, MEDIO, BAJOO)
+	 * @param ciudad - La nueva ciudad del bar
 	 */
-	public void setPresupuesto(String presupuesto) 
+	public void setTipoIPS (tipo tipo) 
 	{
-		this.presupuesto = presupuesto;
+		this.tipoIPS = tipo;
 	}
-	
-	/**
-	 * @return la cantSedes del bar
-	 */
-	public int getCantSedes() 
-	{
-		return cantSedes;
-	}
-	
-	/**
-	 * @param cantSedes - la nueva cantidad de sedes del bar
-	 */
-	public void setCantSedes(int cantSedes) 
-	{
-		this.cantSedes = cantSedes;
-	}
-	
+
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del bar
 	 */
 	public String toString() 
 	{
-		return "Bar [id=" + id + ", nombre=" + nombre + ", ciudad=" + ciudad + ", presupuesto=" + presupuesto
-				+ ", cantSedes=" + cantSedes + "]";
+		return "IPS [id=" + id + ", nombre=" + nombre + ", ciudad=" + localizacion + "]";
 	}
-	
+
 
 }

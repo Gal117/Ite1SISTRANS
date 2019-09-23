@@ -27,7 +27,7 @@ import java.sql.Timestamp;
  * 
  * @author Germán Bravo
  */
-public class Visitan implements VOVisitan
+public class IPSPrestaServicios
 {
 	/* ****************************************************************
 	 * 			Atributos
@@ -35,22 +35,24 @@ public class Visitan implements VOVisitan
 	/**
 	 * El identificador del bebedor que realiza la visita
 	 */
-	private long idBebedor;
+	private long idIPS;
 	
 	/**
 	 * El identificador del bar visitado
 	 */
-	private long idBar;
+	private long idServicio;
 	
 	/**
 	 * La fecha de la visita
 	 */
-	private Timestamp fechaVisita;
+	private Timestamp fechaInicio;
 	
+	private Timestamp fechaFin;
+
 	/**
 	 * El horario en que se realizó la visita (DIURNO, NOCTURNO, TODOS)
 	 */
-	private String horario;
+	private Integer capacidadMaxima;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -58,12 +60,14 @@ public class Visitan implements VOVisitan
 	/**
 	 * Constructor por defecto
 	 */
-	public Visitan() 
+	public IPSPrestaServicios() 
 	{
-		this.idBebedor = 0;
-		this.idBar = 0;
-		this.horario = "";
-		this.fechaVisita = new Timestamp (0);
+		this.idIPS = 0;
+		this.idServicio = 0;
+		this.capacidadMaxima = 0;
+		this.fechaInicio = new Timestamp (0);
+		this.fechaFin = new Timestamp (0);
+
 	}
 
 	/**
@@ -73,76 +77,54 @@ public class Visitan implements VOVisitan
 	 * @param fechaVisita - La fecha en la cual se realiza la visita
 	 * @param horario - El horario en el que el bebedor vista el bar (DIURNO, NOCTURNO, TODOS)
 	 */
-	public Visitan(long idBebedor, long idBar, Timestamp fechaVisita, String horario) 
+	public IPSPrestaServicios(long idIPS, long idServicio, Timestamp inicio,Timestamp fin, int capacidad) 
 	{
-		this.idBebedor = idBebedor;
-		this.idBar = idBar;
-		this.fechaVisita = fechaVisita;
-		this.horario = horario;
+		this.idIPS = idIPS;
+		this.idServicio = idServicio;
+		this.capacidadMaxima = capacidad;
+		this.fechaInicio = inicio;
+		this.fechaFin = fin;
 	}
 
-	/**
-	 * @return El idBebedor
-	 */
-	public long getIdBebedor() 
-	{
-		return idBebedor;
+
+	public long getIdIPS() {
+		return idIPS;
 	}
 
-	/**
-	 * @param idBebedor - El nuevo idBebedor. Debe existir un bebedor con dicho identificador
-	 */
-	public void setIdBebedor(long idBebedor) 
-	{
-		this.idBebedor = idBebedor;
+	public void setIdIPS(long idIPS) {
+		this.idIPS = idIPS;
 	}
 
-	/**
-	 * @return El idBar
-	 */
-	public long getIdBar() 
-	{
-		return idBar;
+	public long getIdServicio() {
+		return idServicio;
 	}
 
-	/**
-	 * @param idBar - El nuevo idBar. Debe exixtir un bar con dicho identificador
-	 */
-	public void setIdBar(long idBar) 
-	{
-		this.idBar = idBar;
+	public void setIdServicio(long idServicio) {
+		this.idServicio = idServicio;
 	}
 
-	/**
-	 * @return La fechaVisita
-	 */
-	public Timestamp getFechaVisita() 
-	{
-		return fechaVisita;
+	public Timestamp getFechaInicio() {
+		return fechaInicio;
 	}
 
-	/**
-	 * @param fechaVisita - La nueva fecha de visita al bar por el bebedor
-	 */
-	public void setFechaVisita(Timestamp fechaVisita) 
-	{
-		this.fechaVisita = fechaVisita;
+	public void setFechaInicio(Timestamp fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
 
-	/**
-	 * @return El horario
-	 */
-	public String getHorario() 
-	{
-		return horario;
+	public Timestamp getFechaFin() {
+		return fechaFin;
 	}
 
-	/**
-	 * @param horario - El nuevo horario en que se realizó la visita (DIURNO, NOCTURNO, TODOS)
-	 */
-	public void setHorario(String horario) 
-	{
-		this.horario = horario;
+	public void setFechaFin(Timestamp fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+	public Integer getCapacidadMaxima() {
+		return capacidadMaxima;
+	}
+
+	public void setCapacidadMaxima(Integer capacidadMaxima) {
+		this.capacidadMaxima = capacidadMaxima;
 	}
 
 	/** 
@@ -151,7 +133,6 @@ public class Visitan implements VOVisitan
 	@Override
 	public String toString() 
 	{
-		return "Visitan [idBebedor=" + idBebedor + ", idBar=" + idBar + ", fechaVisita=" + fechaVisita + ", horario="
-				+ horario + "]";
+		return "IPSPrestaServicios [id de la IPS=" + idIPS + ", id del servicio=" + idServicio + ", fecha de Inicio=" + fechaInicio + ", fecha de fin=" + fechaFin + "capacidad maxima"+capacidadMaxima+"]";
 	}
 }

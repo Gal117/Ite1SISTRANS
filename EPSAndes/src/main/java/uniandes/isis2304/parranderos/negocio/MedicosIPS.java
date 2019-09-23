@@ -15,6 +15,8 @@
 
 package uniandes.isis2304.parranderos.negocio;
 
+import uniandes.isis2304.parranderos.negocio.Persona.tipo;
+
 /**
  * Clase para modelar la relación SIRVEN del negocio de los Parranderos:
  * Cada objeto de esta clase representa el hecho que un bar sirve una bebida y viceversa.
@@ -25,7 +27,7 @@ package uniandes.isis2304.parranderos.negocio;
  * 
  * @author Germán Bravo
  */
-public class Sirven implements VOSirven
+public class MedicosIPS
 {
 	/* ****************************************************************
 	 * 			Atributos
@@ -33,17 +35,14 @@ public class Sirven implements VOSirven
 	/**
 	 * El identificador del bar que sirve la bebida
 	 */
-	private long idBar;
+	private String numeroDocumentoMedico;
+	
+	private tipo tipoDocumentoMedico;
 	
 	/**
 	 * El identificador de la bebida que es servida en el bar
 	 */
-	private long idBebida;
-	
-	/**
-	 * El horario en que sirve la bebida en el bar (DIURNO, NOCTURNO, TODOS)
-	 */
-	private String horario;
+	private long idIPS;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -51,11 +50,11 @@ public class Sirven implements VOSirven
 	/**
 	 * Constructor por defecto
 	 */
-	public Sirven () 
+	public MedicosIPS () 
 	{
-		this.idBar = 0;
-		this.idBebida = 0;
-		this.horario = "";
+		this.numeroDocumentoMedico = "";
+		this.idIPS = 0;
+		this.tipoDocumentoMedico = null;
 	}
 
 	/**
@@ -64,59 +63,36 @@ public class Sirven implements VOSirven
 	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
 	 * @param horario - El horario en el que el bar sirve la bebida (DIURNO, NOCTURNO, TODOS)
 	 */
-	public Sirven (long idBar, long idBebida, String horario) 
+	public MedicosIPS (String numDocMed, tipo tipoDoc, long idIPS) 
 	{
-		this.idBar = idBar;
-		this.idBebida = idBebida;
-		this.horario = horario;
+		this.idIPS = idIPS;
+		this.numeroDocumentoMedico = numDocMed;
+		this.tipoDocumentoMedico = tipoDoc;
 	}
 
-	/**
-	 * @return El idBar
-	 */
-	public long getIdBar() 
-	{
-		return idBar;
+
+	public String getNumeroDocumentoMedico() {
+		return numeroDocumentoMedico;
 	}
 
-	/**
-	 * @param idBar - El nuevo identificador de bar. Debe existir un bar con dicho identificador
-	 */
-	public void setIdBar(long idBar) 
-	{
-		this.idBar = idBar;
+	public void setNumeroDocumentoMedico(String numeroDocumentoMedico) {
+		this.numeroDocumentoMedico = numeroDocumentoMedico;
 	}
 
-	/**
-	 * @return El idBebida
-	 */
-	public long getIdBebida() 
-	{
-		return idBebida;
+	public tipo getTipoDocumentoMedico() {
+		return tipoDocumentoMedico;
 	}
 
-	/**
-	 * @param idBebida - El nuevo identificador de bebida. Debe existir una bebida con dicho identificador
-	 */
-	public void setIdBebida(long idBebida) 
-	{
-		this.idBebida = idBebida;
+	public void setTipoDocumentoMedico(tipo tipoDocumentoMedico) {
+		this.tipoDocumentoMedico = tipoDocumentoMedico;
 	}
 
-	/**
-	 * @return El horario en que el bar sirve la bebida
-	 */
-	public String getHorario() 
-	{
-		return horario;
+	public long getIdIPS() {
+		return idIPS;
 	}
 
-	/**
-	 * @param horario - El nuevo horario en que el bar sirve la bebida (DIURNO, NOCTURNO, TODOS)
-	 */
-	public void setHorario(String horario) 
-	{
-		this.horario = horario;
+	public void setIdIPS(long idIPS) {
+		this.idIPS = idIPS;
 	}
 
 	/** 
@@ -125,6 +101,6 @@ public class Sirven implements VOSirven
 	@Override
 	public String toString() 
 	{
-		return "Sirven [idBar=" + idBar + ", idBebida=" + idBebida + ", horario=" + horario + "]";
+		return "MedicosIPS [idIPS=" + idIPS + ", tipo de documneto medico=" + tipoDocumentoMedico + ", numero de documento del medico=" + numeroDocumentoMedico + "]";
 	}
 }

@@ -15,6 +15,8 @@
 
 package uniandes.isis2304.parranderos.negocio;
 
+import com.sun.jmx.snmp.Timestamp;
+
 /**
  * Clase para modelar la relación GUSTAN del negocio de los Parranderos:
  * Cada objeto de esta clase representa el hecho que un bebedor gusta de una bebida y viceversa.
@@ -24,7 +26,7 @@ package uniandes.isis2304.parranderos.negocio;
  * 
  * @author Germán Bravo
  */
-public class Gustan implements VOGustan
+public class Usuario extends Persona
 {
 	/* ****************************************************************
 	 * 			Atributos
@@ -32,12 +34,12 @@ public class Gustan implements VOGustan
 	/**
 	 * El identificador del bebedor que gusta de la bebida
 	 */
-	private long idBebedor;
+	private String email;
 
 	/**
 	 * El identificador de la bebida que gusta al bebedor
 	 */
-	private long idBebida;
+	private Timestamp fechaNacimiento;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -45,10 +47,11 @@ public class Gustan implements VOGustan
 	/**
 	 * Constructor por defecto
 	 */
-	public Gustan() 
+	public Usuario() 
 	{
-		this.idBebedor = 0;
-		this.idBebida = 0;
+		super();
+		this.email="";
+		this.fechaNacimiento=null;
 	}
 
 	/**
@@ -56,51 +59,37 @@ public class Gustan implements VOGustan
 	 * @param idBebedor - El identificador del bebedor. Debe exixtir un bebedor con dicho identificador
 	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
 	 */
-	public Gustan(long idBebedor, long idBebida) 
+	public Usuario(String nombre, tipo tipoDoc, String numDoc, int rol,String nRol, String email, Timestamp fecha) 
 	{
-		this.idBebedor = idBebedor;
-		this.idBebida = idBebida;
+		super(nombre, tipoDoc, numDoc, rol,nRol);
+		this.email=email;
+		this.fechaNacimiento=fecha;
 	}
 
-	/**
-	 * @return El idBebedor
-	 */
-	public long getIdBebedor() 
-	{
-		return idBebedor;
-	}
-
-	/**
-	 * @param idBebedor - El nuevo idBebedor. Debe existir un bebedor con dicho identificador
-	 */
-	public void setIdBebedor(long idBebedor) 
-	{
-		this.idBebedor = idBebedor;
-	}
-
-	/**
-	 * @return El idBebida
-	 */
-	public long getIdBebida() 
-	{
-		return idBebida;
-	}
-
-	/**
-	 * @param idBebida - El nuevo identificador de bebida. Debe existir una bebida con dicho identificador
-	 */
-	public void setIdBebida(long idBebida) 
-	{
-		this.idBebida = idBebida;
-	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Timestamp getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Timestamp fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 	/** 
 	 * @return Una cadena con la información básica
 	 */
 	@Override
 	public String toString() 
 	{
-		return "Gustan [idBebedor=" + idBebedor + ", idBebida=" + idBebida + "]";
+		return "Usuario [email=" + email + ", fecha de nacimiento=" + fechaNacimiento + "]";
 	}
 	
 }
