@@ -49,7 +49,7 @@ public class SQLIPSPrestaServicios {
 	 */
 	public long adicionarIPSPrestaServicio(PersistenceManager pm, long pIdIPS, long pIdServicio, int pCapacidad, Timestamp pFechaIni, Timestamp pFechaFin) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPSPrestaServicios () + "(idIPS, idServicio, capacidad, fechaInicio, fechaFin) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPSPrestaServicios () + "(idIPS, idServicio, capacidad, fechaInicio, fechaFin) values (?, ?, ?, ?, ?)");
         q.setParameters(pIdIPS, pIdServicio, pCapacidad, pFechaIni, pFechaFin);
         return (long) q.executeUnique();
 	}

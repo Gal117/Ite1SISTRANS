@@ -75,7 +75,7 @@ public class SQLMedicoOrden {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos IPSPrestaServicios
 	 */
-	public List<MedicoOrden> darServicioPrestado (PersistenceManager pm)
+	public List<MedicoOrden> darMedicoOrden (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaMedicoOrden()  );
 		q.setResultClass(MedicoOrden.class);

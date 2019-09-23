@@ -124,7 +124,7 @@ public class SQLMedico {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos MEDICOS
 	 */
-	public List<Medico> darRoles (PersistenceManager pm)
+	public List<Medico> darMedicos (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaMedico());
 		q.setResultClass(Medico.class);

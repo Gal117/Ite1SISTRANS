@@ -50,7 +50,7 @@ public class SQLServicioPrestado {
 	 */
 	public long adicionarServicioPrestado(PersistenceManager pm, long pIdRecep, long pIdReserva, String pCumplido) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaServicioPrestado() + "(idRecepcionista, idReserva, cumplido) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaServicioPrestado() + "(idRecepcionista, idReserva, cumplido) values (?, ?, ?)");
         q.setParameters(pIdRecep, pIdReserva, pCumplido);
         return (long) q.executeUnique();
 	}

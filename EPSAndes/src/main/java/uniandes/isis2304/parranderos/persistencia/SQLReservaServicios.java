@@ -6,7 +6,6 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.parranderos.negocio.IPSPrestaServicios;
 import uniandes.isis2304.parranderos.negocio.ReservaServicios;
 
 public class SQLReservaServicios {
@@ -75,7 +74,7 @@ public class SQLReservaServicios {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos IPSPrestaServicios
 	 */
-	public List<ReservaServicios> darIPSPrestaServicios (PersistenceManager pm)
+	public List<ReservaServicios> darReservaServicios (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservaServicios());
 		q.setResultClass(ReservaServicios.class);
