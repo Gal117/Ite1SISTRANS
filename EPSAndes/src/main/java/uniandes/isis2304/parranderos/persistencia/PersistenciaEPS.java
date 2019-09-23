@@ -53,9 +53,26 @@ public class PersistenciaEPS {
 	private SQLUtil sqlUtil;
 	
 	/**
-	 * 
+	 * Atributo para acceder a sentencias SQL de la tabla Roles
 	 */
 	private SQLRoles sqlRoles;
+	
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla Servicios
+	 */
+	private SQLServicio sqlServicio;
+	
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla Servicios
+	 */
+	private SQLIPS sqlIps;
+
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla IpsPrestaServicios
+	 */
+	private SQLIPSPrestaServicios sqlIpsPrestaServicios;
+
+
 
 	/**
 	 * Constructor privado con valores por defecto - Patrón SINGLETON
@@ -152,8 +169,10 @@ public class PersistenciaEPS {
 	private void crearClasesSQL ()
 	{
 		sqlRoles = new SQLRoles(this);
-//		sqlTipoBebida = new SQLTipoBebida(this);
-//		sqlBebida = new SQLBebida(this);
+		sqlRoles = new SQLRoles(this);
+		sqlServicio = new SQLServicio(this);
+		sqlIps =new SQLIPS(this);
+		sqlIpsPrestaServicios = new SQLIPSPrestaServicios(this);
 //		sqlBar = new SQLBar(this);
 //		sqlBebedor = new SQLBebedor(this);
 //		sqlGustan = new SQLGustan(this);
@@ -170,11 +189,36 @@ public class PersistenciaEPS {
 	}
 	
 	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de IPS de EPSAndes
+	 */
+	public String darTablaIPS()
+	{
+		return tablas.get (1);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de IPSPrestaServicios de EPSAndes
+	 */
+	public String darTablaIPSPrestaServicios()
+	{
+		return tablas.get (2);
+	}
+	
+	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Roles de EPSAndes
 	 */
 	public String darTablaRoles()
 	{
 		return tablas.get (7);
+	}
+	
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Servicios de EPSAndes
+	 */
+	public String darTablaServicio()
+	{
+		return tablas.get (8);
 	}
 	
 	/**

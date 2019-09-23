@@ -99,7 +99,7 @@ public class SQLRoles {
 	 * @param nombreRol - El nombre del rol
 	 * @return El objeto ROL que tiene el nombre dado
 	 */
-	public List<Roles> darTiposBebidaPorNombre (PersistenceManager pm, String nombreRol) 
+	public List<Roles> darRolesPorNombre (PersistenceManager pm, String nombreRol) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaRoles() + " WHERE nombre = ?");
 		q.setResultClass(Roles.class);
@@ -113,7 +113,7 @@ public class SQLRoles {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos ROLES
 	 */
-	public List<Roles> darTiposBebida (PersistenceManager pm)
+	public List<Roles> darRoles (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaRoles());
 		q.setResultClass(Roles.class);
