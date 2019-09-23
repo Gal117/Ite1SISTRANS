@@ -1,5 +1,6 @@
 package uniandes.isis2304.parranderos.persistencia;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -40,22 +41,22 @@ public class SQLIPSPrestaServicios {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un IPSPRESTASERICIOS a la base de datos de EPSAndes
 	 * @param pm - El manejador de persistencia
-	 * @param idIPS - El identificador de la IPS
-	 * @param idServicio - El identificador del servicio
+	 * @param pIdIPS - El identificador de la IPS
+	 * @param pIdServicio - El identificador del servicio
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarIPSPrestaServicio(PersistenceManager pm, long pIdIPS, long pIdServicio) 
+	public long adicionarIPSPrestaServicio(PersistenceManager pm, long pIdIPS, long pIdServicio, int pCapacidad, Timestamp pFechaIni, Timestamp pFechaFin) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPSPrestaServicios () + "(idIPS, idServicio) values (?, ?)");
-        q.setParameters(pIdIPS, pIdServicio);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaIPSPrestaServicios () + "(idIPS, idServicio, capacidad, fechaInicio, fechaFin) values (?, ?)");
+        q.setParameters(pIdIPS, pIdServicio, pCapacidad, pFechaIni, pFechaFin);
         return (long) q.executeUnique();
 	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar UN IPSPRESTASERVICIOS de la base de datos de EPSAndes, por sus identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idIPS - El identificador de la IPS
-	 * @param idServicio - El identificador del servicio
+	 * @param pIdIPS - El identificador de la IPS
+	 * @param pIdServicio - El identificador del servicio
 	 * @return EL número de tuplas eliminadas
 	 */
 	public long eliminarIPSPrestaServicio (PersistenceManager pm, long pIdIPS, long pIdServicio)

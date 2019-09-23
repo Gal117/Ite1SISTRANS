@@ -9,7 +9,7 @@ public interface VOIpsPrestaServicios {
      /**
 	 * @return La capacidad máxima del servicio que presta la IPS
 	 */
-	public Integer getCapacidadMaxima();
+	public int getCapacidadMaxima();
 	
 	/**
 	 * @return fechaInicio del Servicio prestado

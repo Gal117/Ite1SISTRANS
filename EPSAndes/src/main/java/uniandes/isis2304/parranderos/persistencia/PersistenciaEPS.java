@@ -72,6 +72,11 @@ public class PersistenciaEPS {
 	 */
 	private SQLIPSPrestaServicios sqlIpsPrestaServicios;
 
+	/**
+	 * Atributo para acceder a sentencias SQL de la tabla MedicosIPS
+	 */
+	private SQLMedicosIPS sqlMedicosIPS;
+
 
 
 	/**
@@ -88,11 +93,11 @@ public class PersistenciaEPS {
 		tablas.add ("IPS");
 		tablas.add ("IPSPRESTASERVICIOS");
 		tablas.add ("MEDICO");
-		tablas.add ("MEDICOORDEN");
-		tablas.add ("MEDICOIPS");
+		tablas.add ("MEDICOSORDENES");
+		tablas.add ("MEDICOSIPS");
 		tablas.add ("RESERVASERVICIOS");
 		tablas.add ("ROLES");
-		tablas.add ("SERVICIO");
+		tablas.add ("SERVICIOS");
 		tablas.add ("SERVICIOPRESTADO");
 		tablas.add ("USUARIO");
 	}
@@ -173,6 +178,7 @@ public class PersistenciaEPS {
 		sqlServicio = new SQLServicio(this);
 		sqlIps =new SQLIPS(this);
 		sqlIpsPrestaServicios = new SQLIPSPrestaServicios(this);
+		sqlMedicosIPS = new SQLMedicosIPS(this);
 //		sqlBar = new SQLBar(this);
 //		sqlBebedor = new SQLBebedor(this);
 //		sqlGustan = new SQLGustan(this);
@@ -202,6 +208,14 @@ public class PersistenciaEPS {
 	public String darTablaIPSPrestaServicios()
 	{
 		return tablas.get (2);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de MedicosIPS de EPSAndes
+	 */
+	public String darTablaMedicosIPS()
+	{
+		return tablas.get (5);
 	}
 	
 	/**

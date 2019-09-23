@@ -27,6 +27,10 @@ public class Usuario extends Persona
 	 */
 	private Timestamp fechaNacimiento;
 
+	/**
+	 * Atributo que da el id del usuario.
+	 */
+	private long id;
 	/* ****************************************************************
 	 * 			Métodos
 	 *****************************************************************/
@@ -45,7 +49,7 @@ public class Usuario extends Persona
 	 * @param idBebedor - El identificador del bebedor. Debe exixtir un bebedor con dicho identificador
 	 * @param idBebida - El identificador de la bebida. Debe existir una bebida con dicho identificador
 	 */
-	public Usuario(String nombre, String tipoDoc, String numDoc, int rol, String email, Timestamp fecha) 
+	public Usuario(String nombre, String tipoDoc, String numDoc, long rol, String email, Timestamp fecha) 
 	{
 		super(nombre, tipoDoc, numDoc, rol);
 		this.email=email;
@@ -69,6 +73,12 @@ public class Usuario extends Persona
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public long getId() {
+		return id;
+	}
+	public void setId(long pid) {
+		this.id = pid;
+	}
 	/** 
 	 * @return Una cadena con la información básica
 	 */

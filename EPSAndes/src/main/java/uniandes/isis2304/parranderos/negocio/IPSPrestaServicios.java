@@ -35,10 +35,7 @@ public class IPSPrestaServicios implements VOIpsPrestaServicios
 	
 	private Timestamp fechaFin;
 
-	/**
-	 * El horario en que se realizó la visita (DIURNO, NOCTURNO, TODOS)
-	 */
-	private Integer capacidadMaxima;
+	private int capacidadMaxima;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -105,7 +102,7 @@ public class IPSPrestaServicios implements VOIpsPrestaServicios
 		this.fechaFin = fechaFin;
 	}
 
-	public Integer getCapacidadMaxima() {
+	public int getCapacidadMaxima() {
 		return capacidadMaxima;
 	}
 

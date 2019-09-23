@@ -23,8 +23,14 @@ public abstract class  Persona implements VOPersona
 	 */
 	private String nombre;
 
+	/**
+	 * El tipo de documento de la persona
+	 */
 	private String tipoDocumento;
 	
+	/**
+	 * El id del rol de la persona
+	 */
 	private long idRol;
 	
 
@@ -51,7 +57,7 @@ public abstract class  Persona implements VOPersona
 	 * @param ciudad - La ciudad del bebedor
 	 * @param presupuesto - El presupuesto del bebedor (ALTO, MEDIO, BAJO)
 	 */
-	public Persona(String nombre, String tipoDoc, String numDoc, int rol) 
+	public Persona(String nombre, String tipoDoc, String numDoc, long rol) 
 	{
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDoc;
